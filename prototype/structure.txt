@@ -1,0 +1,6 @@
+Entrada fria ou quente: sopa, torrada, pães
+prato principal: carne
+opção: opção ao prato principal
+guarnição: farofa, vegetal ou massa
+acompanhamento: arroz e feijão (dividremos em acompanhamento 1 e acompanhamento 2)
+
