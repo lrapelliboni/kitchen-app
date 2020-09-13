@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cardápio</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  
+  <link rel="stylesheet" type="text/css" href="/css/main.css">
+
+</head>
+
+<body>
+  <div class="main-container">
+    <div class="box">
+      <h1><%= menu.title %></h1>
+      <h2>De <%= new Date(menu.startDate).toLocaleDateString('pt-BR', {timeZone: 'UTC'})  %> até <%= new Date(menu.endDate).toLocaleDateString('pt-BR', {timeZone: 'UTC'}) %>  </h2>
+      <table class="table-display">
+        <tr>
+          <th>&nbsp;</th>
+          <th>Segunda-feira</th>
+          <th>Terça-feira</th>
+          <th>Quarta-feira</th>
+          <th>Quinta-feira</th>
+          <th>Sexta-feira</th>
+          <th>Sábado</th>
+          <th>Domingo</th>
+        </tr>
+        <tr>
+          <th rowspan="6" class="verticalTableHeader">Almoço</th>
+        </tr>
+        <tr>
+          <td>1 - <%= menu.monday.lunch.accom1 %></td>
+          <td>1 - <%= menu.tuesday.lunch.accom1 %></td>
+          <td>1 - <%= menu.wednesday.lunch.accom1 %></td>
+          <td>1 - <%= menu.thursday.lunch.accom1 %></td>
+          <td>1 - <%= menu.friday.lunch.accom1 %></td>
+          <td>1 - <%= menu.saturday.lunch.accom1 %></td>
+          <td>1 - <%= menu.sunday.lunch.accom1 %></td>
+        </tr>
+        <tr>
+          <td>2 - <%= menu.monday.lunch.accom2 %></td>
+          <td>2 - <%= menu.tuesday.lunch.accom2 %></td>
+          <td>2 - <%= menu.wednesday.lunch.accom2 %></td>
+          <td>2 - <%= menu.thursday.lunch.accom2 %></td>
+          <td>2 - <%= menu.friday.lunch.accom2 %></td>
+          <td>2 - <%= menu.saturday.lunch.accom2 %></td>
+          <td>2 - <%= menu.sunday.lunch.accom2 %></td>
+        </tr>
+        <tr>
+          <td>3 - <%= menu.monday.lunch.opt %></td>
+          <td>3 - <%= menu.tuesday.lunch.opt %></td>
+          <td>3 - <%= menu.wednesday.lunch.opt %></td>
+          <td>3 - <%= menu.thursday.lunch.opt %></td>
+          <td>3 - <%= menu.friday.lunch.opt %></td>
+          <td>3 - <%= menu.saturday.lunch.opt %></td>
+          <td>3 - <%= menu.sunday.lunch.opt %></td>
+        </tr>
+        <tr>
+          <td>4 - <%= menu.monday.lunch.main %></td>
+          <td>4 - <%= menu.tuesday.lunch.main %></td>
+          <td>4 - <%= menu.wednesday.lunch.main %></td>
+          <td>4 - <%= menu.thursday.lunch.main %></td>
+          <td>4 - <%= menu.friday.lunch.main %></td>
+          <td>4 - <%= menu.saturday.lunch.main %></td>
+          <td>4 - <%= menu.sunday.lunch.main %></td>
+        </tr>
+        <tr>
+          <td>5 - <%= menu.monday.lunch.garrison %></td>
+          <td>5 - <%= menu.tuesday.lunch.garrison %></td>
+          <td>5 - <%= menu.wednesday.lunch.garrison %></td>
+          <td>5 - <%= menu.thursday.lunch.garrison %></td>
+          <td>5 - <%= menu.friday.lunch.garrison %></td>
+          <td>5 - <%= menu.saturday.lunch.garrison %></td>
+          <td>5 - <%= menu.sunday.lunch.garrison %></td>
+        </tr>
+
+        <tr>
+          <td colspan="8">&nbsp;</td>
+        </tr>
+        <tr>
+          <th rowspan="6" class="verticalTableHeader">Jantar</th>
+        </tr>
+        <tr>
+          <td>1 - <%= menu.monday.dinner.accom1 %></td>
+          <td>1 - <%= menu.tuesday.dinner.accom1 %></td>
+          <td>1 - <%= menu.wednesday.dinner.accom1 %></td>
+          <td>1 - <%= menu.thursday.dinner.accom1 %></td>
+          <td>1 - <%= menu.friday.dinner.accom1 %></td>
+          <td>1 - <%= menu.saturday.dinner.accom1 %></td>
+          <td>1 - <%= menu.sunday.dinner.accom1 %></td>
+        </tr>
+        <tr>
+          <td>2 - <%= menu.monday.dinner.accom2 %></td>
+          <td>2 - <%= menu.tuesday.dinner.accom2 %></td>
+          <td>2 - <%= menu.wednesday.dinner.accom2 %></td>
+          <td>2 - <%= menu.thursday.dinner.accom2 %></td>
+          <td>2 - <%= menu.friday.dinner.accom2 %></td>
+          <td>2 - <%= menu.saturday.dinner.accom2 %></td>
+          <td>2 - <%= menu.sunday.dinner.accom2 %></td>
+        </tr>
+        <tr>
+          <td>3 - <%= menu.monday.dinner.opt %></td>
+          <td>3 - <%= menu.tuesday.dinner.opt %></td>
+          <td>3 - <%= menu.wednesday.dinner.opt %></td>
+          <td>3 - <%= menu.thursday.dinner.opt %></td>
+          <td>3 - <%= menu.friday.dinner.opt %></td>
+          <td>3 - <%= menu.saturday.dinner.opt %></td>
+          <td>3 - <%= menu.sunday.dinner.opt %></td>
+        </tr>
+        <tr>
+          <td>4 - <%= menu.monday.dinner.main %></td>
+          <td>4 - <%= menu.tuesday.dinner.main %></td>
+          <td>4 - <%= menu.wednesday.dinner.main %></td>
+          <td>4 - <%= menu.thursday.dinner.main %></td>
+          <td>4 - <%= menu.friday.dinner.main %></td>
+          <td>4 - <%= menu.saturday.dinner.main %></td>
+          <td>4 - <%= menu.sunday.dinner.main %></td>
+        </tr>
+        <tr>
+          <td>5 - <%= menu.monday.dinner.garrison %></td>
+          <td>5 - <%= menu.tuesday.dinner.garrison %></td>
+          <td>5 - <%= menu.wednesday.dinner.garrison %></td>
+          <td>5 - <%= menu.thursday.dinner.garrison %></td>
+          <td>5 - <%= menu.friday.dinner.garrison %></td>
+          <td>5 - <%= menu.saturday.dinner.garrison %></td>
+          <td>5 - <%= menu.sunday.dinner.garrison %></td>
+        </tr>
+      </table>
+    </div>
+    <% if (showButton) { %>
+    <br>
+    <a href="/" class="btn btn-primary">Cancelar</a>
+    <% } %>
+  </div>
+</body>
+
+</html>

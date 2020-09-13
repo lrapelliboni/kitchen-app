@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardápios Cadastrados</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+
+</head>
+<body>
+  <div class="container">
+    <h1>Cardápios cadastrados</h1>
+    <a href="/new">Novo</a>
+    <table class="table">
+        <% if (menus.length > 0) { %>
+        <tr>
+          <th>Título</th>
+          <th>Início</th>
+          <th>Fim</th>
+          <th>Ações</th>
+        </tr>
+        <% } %>
+        <% if (menus.length == 0) { %>
+          <tr>
+            <td>Não existem cardápios cadastrados.</td>
+          </tr>
+        <% } else { %>
+          <% for(var i = 0; i < menus.length; i++) {%>
+          <tr>
+            <td><%= menus[i].title %></td>
+            <td><%= new Date(menus[i].startDate).toLocaleDateString('pt-BR', {timeZone: 'UTC'})%></td>
+            <td><%= new Date(menus[i].endDate).toLocaleDateString('pt-BR', {timeZone: 'UTC'}) %></td>
+            <td>
+              <a href="javascript:remove('<%= menus[i]._id %>')">[Remover]</a>
+              &nbsp;
+              <a href="/menu/<%= menus[i]._id %>">[Abrir]</a>
+              &nbsp;
+              <a href="/menu/<%= menus[i]._id %>/edit">[Editar]</a>
+            </td>
+          </tr>
+          <% } %>
+        <% } %>
+    </table>
+  </div>
+</body>
+<script>
+function remove(id) {
+  if (confirm('Deseja realmente apagar este cardápio?')) {
+    console.log(id);
+    fetch('/', {
+      method: 'delete',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        id: id
+      })
+    }).then(res => {
+      if (res.ok) return res.json()
+    })
+    .then(data => {
+      window.location.reload()
+    })
+  }    
+}
+</script>
+</html>

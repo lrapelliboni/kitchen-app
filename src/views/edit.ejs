@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Cardápio</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Editar Cardápio</h1>
+        <form action="/menu/<%= menu._id %>/edit" method="POST">
+            <input type="hidden" name="id" value="<%= menu._id %>">
+            <div class="">
+                <div class="form-group">
+                    <label for="title">Título:</label>
+                    <input required class="form-control" type="text" name="title" value="<%= menu.title %>">
+                </div>
+                <div class="form-group">
+                    <label for="start-date">Início:</label>
+                    <input required type="date" class="form-control" name="startDate" value="<%= menu.startDate %>"> 
+                </div>
+                <div class="form-group">
+                    <label for="start-date">Fim:</label>
+                    <input required type="date" class="form-control" name="endDate" value="<%= menu.endDate %>"> 
+                </div>
+            </div>
+    
+            <table class="table-responsive">
+                <tr>
+                <th>&nbsp;</th>
+                <th>Segunda-feira</th>
+                <th>Terça-feira</th>
+                <th>Quarta-feira</th>
+                <th>Quinta-feira</th>
+                <th>Sexta-feira</th>
+                <th>Sábado</th>
+                <th>Domingo</th>
+                </tr>
+                <tr>
+                <th rowspan="6" class="verticalTableHeader">Almoço</th>
+                </tr>
+                <tr>
+                    <td><input required tabindex="1" name="monday[lunch][accom1]" placeholder="acompanhamento 1" value="<%= menu.monday.lunch.accom1 %>"></td>
+                    <td><input required tabindex="12" name="tuesday[lunch][accom1]" placeholder="acompanhamento 1" value="<%= menu.tuesday.lunch.accom1 %>"></td>
+                    <td><input required tabindex="22" name="wednesday[lunch][accom1]" placeholder="acompanhamento 1" value="<%= menu.wednesday.lunch.accom1 %>"></td>
+                    <td><input required tabindex="32" name="thursday[lunch][accom1]" placeholder="acompanhamento 1" value="<%= menu.thursday.lunch.accom1 %>" ></td>
+                    <td><input required tabindex="42" name="friday[lunch][accom1]" placeholder="acompanhamento 1" value="<%= menu.friday.lunch.accom1 %>"></td>
+                    <td><input required tabindex="52" name="saturday[lunch][accom1]" placeholder="acompanhamento 1" value="<%= menu.saturday.lunch.accom1 %>"></td>
+                    <td><input required tabindex="62" name="sunday[lunch][accom1]"  placeholder="acompanhamento 1" value="<%= menu.sunday.lunch.accom1 %>"></td>
+                </tr>
+                <tr>
+                <td><input required tabindex="2" name="monday[lunch][accom2]" placeholder="acompanhamento 2" value="<%= menu.monday.lunch.accom2 %>"></td>
+                <td><input required tabindex="13" name="tuesday[lunch][accom2]" placeholder="acompanhamento 2" value="<%= menu.tuesday.lunch.accom2 %>"></td>
+                <td><input required tabindex="23" name="wednesday[lunch][accom2]" placeholder="acompanhamento 2" value="<%= menu.wednesday.lunch.accom2 %>"></td>
+                <td><input required tabindex="33" name="thursday[lunch][accom2]" placeholder="acompanhamento 2" value="<%= menu.thursday.lunch.accom2 %>"></td>
+                <td><input required tabindex="43" name="friday[lunch][accom2]" placeholder="acompanhamento 2" value="<%= menu.friday.lunch.accom2 %>"></td>
+                <td><input required tabindex="53" name="saturday[lunch][accom2]" placeholder="acompanhamento 2" value="<%= menu.saturday.lunch.accom2 %>"></td>
+                <td><input required tabindex="63" name="sunday[lunch][accom2]" placeholder="acompanhamento 2" value="<%= menu.sunday.lunch.accom2 %>"><t/d>
+                </tr>
+                <tr>
+                <td><input required tabindex="3" name="monday[lunch][opt]" placeholder="Opção (salada)" value="<%= menu.monday.lunch.opt %>"></td>
+                <td><input required tabindex="14" name="tuesday[lunch][opt]" placeholder="Opção (salada)" value="<%= menu.tuesday.lunch.opt %>"></td>
+                <td><input required tabindex="24" name="wednesday[lunch][opt]" placeholder="Opção (salada)" value="<%= menu.wednesday.lunch.opt %>"></td>
+                <td><input required tabindex="34" name="thursday[lunch][opt]" placeholder="Opção (salada)" value="<%= menu.thursday.lunch.opt %>"></td>
+                <td><input required tabindex="44" name="friday[lunch][opt]" placeholder="Opção (salada)" value="<%= menu.friday.lunch.opt %>"></td>
+                <td><input required tabindex="54" name="saturday[lunch][opt]" placeholder="Opção (salada)" value="<%= menu.saturday.lunch.opt %>"></td>
+                <td><input required tabindex="64" name="sunday[lunch][opt]" placeholder="Opção (salada)" value="<%= menu.sunday.lunch.opt %>"></td>
+                </tr>
+                <tr>
+                <td><input required tabindex="4" name="monday[lunch][main]" placeholder="Prato principal" value="<%= menu.monday.lunch.main %>"></td>
+                <td><input required tabindex="15" name="tuesday[lunch][main]" placeholder="Prato principal" value="<%= menu.tuesday.lunch.main %>"></td>
+                <td><input required tabindex="25" name="wednesday[lunch][main]" placeholder="Prato principal" value="<%= menu.wednesday.lunch.main %>"></td>
+                <td><input required tabindex="35" name="thursday[lunch][main]" placeholder="Prato principal" value="<%= menu.thursday.lunch.main %>"></td>
+                <td><input required tabindex="45" name="friday[lunch][main]" placeholder="Prato principal" value="<%= menu.friday.lunch.main %>"></td>
+                <td><input required tabindex="55" name="saturday[lunch][main]" placeholder="Prato principal" value="<%= menu.saturday.lunch.main %>"></td>
+                <td><input required tabindex="65" name="sunday[lunch][main]" placeholder="Prato principal" value="<%= menu.sunday.lunch.main %>"></td>
+                </tr>
+                <tr>
+                <td><input required tabindex="5" name="monday[lunch][garrison]" placeholder="Guarnição" value="<%= menu.monday.lunch.garrison %>"></td>
+                <td><input required tabindex="16" name="tuesday[lunch][garrison]" placeholder="Guarnição" value="<%= menu.tuesday.lunch.garrison %>"></td>
+                <td><input required tabindex="26" name="wednesday[lunch][garrison]" placeholder="Guarnição" value="<%= menu.wednesday.lunch.garrison %>"></td>
+                <td><input required tabindex="36" name="thursday[lunch][garrison]" placeholder="Guarnição" value="<%= menu.thursday.lunch.garrison %>"></td>
+                <td><input required tabindex="46" name="friday[lunch][garrison]" placeholder="Guarnição" value="<%= menu.friday.lunch.garrison %>"></td>
+                <td><input required tabindex="56" name="saturday[lunch][garrison]" placeholder="Guarnição" value="<%= menu.saturday.lunch.garrison %>"></td>
+                <td><input required tabindex="66" name="sunday[lunch][garrison]" placeholder="Guarnição" value="<%= menu.sunday.lunch.garrison %>"></td>
+                </tr>
+                <tr>
+                <td colspan="8">&nbsp;</td>
+                </tr>
+                <tr>
+                <th rowspan="6" class="verticalTableHeader">Jantar</th>
+                </tr>
+                <tr>
+                    <td><input required tabindex="7" name="monday[dinner][accom1]" placeholder="acompanhamento 1" value="<%= menu.monday.dinner.accom1 %>"></td>
+                    <td><input required tabindex="17" name="tuesday[dinner][accom1]" placeholder="acompanhamento 1" value="<%= menu.tuesday.dinner.accom1 %>"></td>
+                    <td><input required tabindex="27" name="wednesday[dinner][accom1]" placeholder="acompanhamento 1" value="<%= menu.wednesday.dinner.accom1 %>"></td>
+                    <td><input required tabindex="37" name="thursday[dinner][accom1]" placeholder="acompanhamento 1" value="<%= menu.thursday.dinner.accom1 %>"></td>
+                    <td><input required tabindex="47" name="friday[dinner][accom1]" placeholder="acompanhamento 1" value="<%= menu.friday.dinner.accom1 %>"></td>
+                    <td><input required tabindex="57" name="saturday[dinner][accom1]" placeholder="acompanhamento 1" value="<%= menu.saturday.dinner.accom1 %>"></td>
+                    <td><input required tabindex="67" name="sunday[dinner][accom1]" placeholder="acompanhamento 1" value="<%= menu.sunday.dinner.accom1 %>"></td>
+                </tr>
+                <tr>
+                <td><input required tabindex="8" name="monday[dinner][accom2]" placeholder="acompanhamento 2" value="<%= menu.monday.dinner.accom2 %>"></td>
+                <td><input required tabindex="18" name="tuesday[dinner][accom2]" placeholder="acompanhamento 2" value="<%= menu.tuesday.dinner.accom2 %>"></td>
+                <td><input required tabindex="28" name="wednesday[dinner][accom2]" placeholder="acompanhamento 2" value="<%= menu.wednesday.dinner.accom2 %>"></td>
+                <td><input required tabindex="38" name="thursday[dinner][accom2]" placeholder="acompanhamento 2" value="<%= menu.thursday.dinner.accom2 %>"></td>
+                <td><input required tabindex="48" name="friday[dinner][accom2]" placeholder="acompanhamento 2" value="<%= menu.friday.dinner.accom2 %>"></td>
+                <td><input required tabindex="58" name="saturday[dinner][accom2]" placeholder="acompanhamento 2" value="<%= menu.saturday.dinner.accom2 %>"></td>
+                <td><input required tabindex="68" name="sunday[dinner][accom2]" placeholder="acompanhamento 2" value="<%= menu.sunday.dinner.accom2 %>"></td>
+                </tr>
+                <tr>
+                <td><input required tabindex="9" name="monday[dinner][opt]" placeholder="Opção (salada)" value="<%= menu.monday.dinner.opt %>"></td>
+                <td><input required tabindex="19" name="tuesday[dinner][opt]" placeholder="Opção (salada)" value="<%= menu.tuesday.dinner.opt %>"></td>
+                <td><input required tabindex="29" name="wednesday[dinner][opt]" placeholder="Opção (salada)" value="<%= menu.wednesday.dinner.opt %>"></td>
+                <td><input required tabindex="39" name="thursday[dinner][opt]" placeholder="Opção (salada)" value="<%= menu.thursday.dinner.opt %>"></td>
+                <td><input required tabindex="49" name="friday[dinner][opt]" placeholder="Opção (salada)" value="<%= menu.friday.dinner.opt %>"></td>
+                <td><input required tabindex="59" name="saturday[dinner][opt]" placeholder="Opção (salada)" value="<%= menu.saturday.dinner.opt %>"></td>
+                <td><input required tabindex="69" name="sunday[dinner][opt]" placeholder="Opção (salada)" value="<%= menu.sunday.dinner.opt %>"></td>
+                </tr>
+                <tr>
+                <td><input required tabindex="10" name="monday[dinner][main]" placeholder="Prato principal" value="<%= menu.monday.dinner.main %>"></td>
+                <td><input required tabindex="20" name="tuesday[dinner][main]" placeholder="Prato principal" value="<%= menu.tuesday.dinner.main %>"></td>
+                <td><input required tabindex="30" name="wednesday[dinner][main]" placeholder="Prato principal" value="<%= menu.wednesday.dinner.main %>"></td>
+                <td><input required tabindex="40" name="thursday[dinner][main]" placeholder="Prato principal" value="<%= menu.thursday.dinner.main %>"></td>
+                <td><input required tabindex="50" name="friday[dinner][main]" placeholder="Prato principal" value="<%= menu.friday.dinner.main %>"></td>
+                <td><input required tabindex="60" name="saturday[dinner][main]" placeholder="Prato principal" value="<%= menu.saturday.dinner.main %>"></td>
+                <td><input required tabindex="70" name="sunday[dinner][main]" placeholder="Prato principal" value="<%= menu.sunday.dinner.main %>"></td>
+                </tr>
+                <tr>
+                <td><input required tabindex="11" name="monday[dinner][garrison]" placeholder="Guarnição" value="<%= menu.monday.dinner.garrison %>"></td>
+                <td><input required tabindex="21" name="tuesday[dinner][garrison]" placeholder="Guarnição" value="<%= menu.tuesday.dinner.garrison %>"></td>
+                <td><input required tabindex="31" name="wednesday[dinner][garrison]" placeholder="Guarnição" value="<%= menu.wednesday.dinner.garrison %>"></td>
+                <td><input required tabindex="41" name="thursday[dinner][garrison]" placeholder="Guarnição" value="<%= menu.thursday.dinner.garrison %>"></td>
+                <td><input required tabindex="51" name="friday[dinner][garrison]" placeholder="Guarnição" value="<%= menu.friday.dinner.garrison %>"></td>
+                <td><input required tabindex="61" name="saturday[dinner][garrison]" placeholder="Guarnição" value="<%= menu.saturday.dinner.garrison %>"></td>
+                <td><input required tabindex="71" name="sunday[dinner][garrison]" placeholder="Guarnição" value="<%= menu.sunday.dinner.garrison %>"></td>
+                </tr>
+            </table>
+            <br>
+            <div class="form-group">
+                <button class="btn btn-primary">Atualizar tudo</button>
+                <a href="/" class="btn">Cancelar</a>
+            </div>
+        </form>
+    </div>
+    
+</body>
+</html>
