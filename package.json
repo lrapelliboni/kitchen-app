@@ -5,8 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "dev": "nodemon .",
-    "start":"xdg-open http://localhost:3333",
-  "open": "npm run dev & npm run start"
+    "start": "xdg-open http://localhost:3333",
+    "open": "npm run dev & npm run start"
   },
   "author": "",
   "license": "ISC",

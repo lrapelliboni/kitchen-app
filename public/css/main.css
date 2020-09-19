@@ -2,15 +2,13 @@
     border-collapse: collapse;
     border: 1px solid #333;
     font: normal 19px Arial, Helvetica, sans-serif;
-    margin-top: 50px;
+   
 
 }
 .table-display td, .table-display th {
     border: 1px solid #333;
     padding: 5px;
 }
-
-
 
 .verticalTableHeader {
     text-align:center;
@@ -28,13 +26,4 @@
     padding-top:110%;/* takes width as reference, + 10% for faking some extra padding */
     display:inline-block;
     vertical-align:middle;
-    
 }
-
-.main-container {
-    margin: auto;
-    width: 80%;
-    background: #fff;
-    
-    padding: 10px;
-  }
